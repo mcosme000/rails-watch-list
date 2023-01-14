@@ -2,33 +2,39 @@
   <div class="banner-content text-center">
     <h1 class="mb-2"><%= @list.name %></h1>
     <% if @list.movies.any? %>
-      <p class="button"><%= @list.movies.count %> movies</p>
+      <p class="tag"><%= @list.movies.count %> movies</p>
     <% end %>
   </div>
 </div>
 
-<div class="container my-3">
+<div class="movies-container my-4 row">
+  <div class="my-4">
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "button" %>
+    <%= link_to "Delete list", list_path(@list), class: "button delete",
+    data: { turbo_method: :delete, turbo_confirm: "Continue?" } %>
+  </div>
+
   <% if @list.movies.any? %>
-    <div class="movies-container my-4 row">
-      <% @list.movies.each do |movie| %>
-        <div class="col-sm-12 col-md-6">
-          <div class="col-12 movie-card shadow-sm">
-            <div class="movie-img">
-              <img src="<%= movie.poster_url%>" alt="">
-            </div>
-            <div class="movie-content p-3">
-              <h3 class="fw-bold"><%= movie.title %></h3 class="fw-bold">
-              <p>Movie description</p>
-              <p>movie review</p>
-            </div>
+    <% @list.movies.each do |movie| %>
+      <div class="col-sm-12 col-md-6">
+        <div class="col-12 movie-card shadow-sm">
+          <div class="movie-img">
+            <img src="<%= movie.poster_url%>" alt="">
+          </div>
+          <div class="movie-content p-3">
+            <h3 class="fw-bold"><%= movie.title %> - <%= movie.rating %></h3 class="fw-bold">
+            <p><%= movie.overview %></p>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+
   <% else %>
-    <h3>You don't have any movies in this list yet.</h3>
-    <p>What about you try to add some?</p>
-    <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+    <div class="message p-3 rounded">
+      <h3>You don't have any movies in this list yet.</h3>
+      <p>What about you add some?</p>
+      <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "button" %>
+    </div>
   <% end %>
 
 </div>

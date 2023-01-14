@@ -1,8 +1,23 @@
-.button {
+.tag {
   font-size: 14px;
-  padding: 10px 25px;
+  padding: 5px 20px;
   background: rgb(235, 255, 84);
   color: #000;
   border-radius: 3px;
   display: inline;
+}
+
+.button {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 25px;
+  background: rgb(82, 120, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  display: inline;
+  margin-right: 10px;
+}
+
+.delete {
+  background: rgb(209, 58, 58);
 }
