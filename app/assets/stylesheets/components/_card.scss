@@ -1,0 +1,17 @@
+.card {
+  background-image: url(thumbnail.jpg);
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  a {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgba(39, 39, 39, 0.783);
+  }
+}
