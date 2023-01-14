@@ -1,18 +1,34 @@
-<div class="banner">
-  <% if @list.movies.any? %>
-    <p class="button"><%= @list.movies.count %> movies</p>
-  <% end %>
+<div class="banner d-flex justify-content-center align-items-center">
+  <div class="banner-content text-center">
+    <h1 class="mb-2"><%= @list.name %></h1>
+    <% if @list.movies.any? %>
+      <p class="button"><%= @list.movies.count %> movies</p>
+    <% end %>
+  </div>
 </div>
 
 <div class="container my-3">
-
   <% if @list.movies.any? %>
-    <% @list.movies.each do |movie| %>
-      <p><%= movie.title %></p>
-    <% end %>
+    <div class="movies-container my-4 row">
+      <% @list.movies.each do |movie| %>
+        <div class="col-sm-12 col-md-6">
+          <div class="col-12 movie-card shadow-sm">
+            <div class="movie-img">
+              <img src="<%= movie.poster_url%>" alt="">
+            </div>
+            <div class="movie-content p-3">
+              <h3 class="fw-bold"><%= movie.title %></h3 class="fw-bold">
+              <p>Movie description</p>
+              <p>movie review</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% else %>
     <h3>You don't have any movies in this list yet.</h3>
     <p>What about you try to add some?</p>
+    <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
   <% end %>
 
 </div>
