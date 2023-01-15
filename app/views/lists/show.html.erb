@@ -18,11 +18,11 @@
 
     <% @list.movies.each do |movie| %>
       <div class="col-sm-12 col-md-6">
-        <div class="col-12 movie-card shadow-sm">
+        <div class="col-12 carta shadow-sm">
           <div class="movie-img">
             <img src="<%= movie.poster_url%>" alt="">
           </div>
-          <div class="movie-content p-3">
+          <div class="carta-content p-3">
             <h3 class="fw-bold"><%= movie.title %> - <%= movie.rating %></h3 class="fw-bold">
             <p><%= movie.overview %></p>
           </div>
@@ -37,5 +37,21 @@
       <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "button" %>
     </div>
   <% end %>
+
+<%# MY EXPERIMENT %>
+  <div class="list-grid">
+    <% @movies.each do |m| %>
+      <div class="carta-grid d-flex flex-column">
+        <img src="<%= m.poster_url%>" alt="">
+        <div class="carta-grid-content d-flex flex-column justify-content-between">
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="my-3 fw-bold"><%= m.title%></p>
+            <i class="fa fa-solid fa fa-ellipsis-vertical"></i>
+          </div>
+          <p class="votes"><%= m.rating %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
 </div>
