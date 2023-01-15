@@ -1,7 +1,14 @@
+require 'open-uri'
+
 class ListsController < ApplicationController
 
   def index
     @lists = List.all
+  end
+
+  def top_rated
+    url = 'http://tmdb.lewagon.com/movie/top_rated'
+    @data = JSON.parse(URI.open(url).read)
   end
 
   def new

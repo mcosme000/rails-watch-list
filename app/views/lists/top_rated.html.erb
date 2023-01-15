@@ -1,0 +1,18 @@
+<div class="container my-3">
+
+  <h2>Testing the API</h2>
+
+  <div class="lists-container row">
+    <% @data["results"].each do |movie| %>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="list-card">
+          <p><%= image_tag 'https://image.tmdb.org/t/p/w1280' + movie["poster_path"] %></p>
+          <p><%= movie["title"]%></p>
+          <p><%= movie["overview"][0, 100] %></p>
+          <p><%= movie["poster_path"] %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

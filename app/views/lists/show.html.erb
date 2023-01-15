@@ -1,4 +1,5 @@
-<div class="banner d-flex justify-content-center align-items-center">
+<div class="banner d-flex justify-content-center align-items-center"
+    style="background-image:url(<%= image_url(@list.image_url) %>)">
   <div class="banner-content text-center">
     <h1 class="mb-2"><%= @list.name %></h1>
     <% if @list.movies.any? %>
@@ -8,13 +9,13 @@
 </div>
 
 <div class="movies-container my-4 row">
-  <div class="my-4">
-    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "button" %>
-    <%= link_to "Delete list", list_path(@list), class: "button delete",
-    data: { turbo_method: :delete, turbo_confirm: "Continue?" } %>
-  </div>
-
   <% if @list.movies.any? %>
+    <div class="my-4">
+      <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "button" %>
+      <%= link_to "Delete list", list_path(@list), class: "button delete",
+      data: { turbo_method: :delete, turbo_confirm: "Continue?" } %>
+    </div>
+
     <% @list.movies.each do |movie| %>
       <div class="col-sm-12 col-md-6">
         <div class="col-12 movie-card shadow-sm">
