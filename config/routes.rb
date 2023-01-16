@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
-  resources :lists do
+  root to: 'lists#index'
+  resources :lists, except: :index do
     resources :bookmarks, only: %i[new create]
     collection do
       get :top_rated

@@ -1,8 +1,25 @@
-<header class="container py-3 d-flex justify-content-between align-items-center">
-  <h1><%= link_to "Movies", lists_path %></h1>
-  <div class="nav">
-    <%= link_to "Top rated movies", top_rated_lists_path, class: "button" %>
-    <%= link_to "My lists", lists_path, class: "button" %>
-    <%= link_to "New list", new_list_path, class: "button" %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <h1><%= link_to "Movies", root_path %></h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Top rated movies", top_rated_lists_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My lists", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "New list", new_list_path, class: "nav-link" %>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+    </div>
   </div>
-</header>
+</nav>
