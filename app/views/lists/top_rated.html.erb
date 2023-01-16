@@ -1,20 +1,6 @@
 <div class="container my-3">
-
   <h2 class="mb-4">Top rated movies</h2>
-
   <div class="list-grid">
-    <% @data["results"].each do |movie| %>
-      <div class="card-grid d-flex flex-column ">
-        <%= image_tag 'https://image.tmdb.org/t/p/w1280' + movie["poster_path"] %>
-        <div class="card-grid-content d-flex flex-column justify-content-between">
-          <div class="d-flex justify-content-between align-items-center">
-            <p class="my-2 fw-bold"><%= movie["title"]%></p>
-            <i class="fa fa-solid fa fa-ellipsis-vertical"></i>
-          </div>
-          <p class="votes"><%= movie["vote_average"] %></p>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'lists/api_card' %>
   </div>
-
 </div>

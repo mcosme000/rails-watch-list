@@ -1,11 +1,3 @@
 <div class="container my-3">
-
-  <div class="form-container">
-    <h1>Create a new list</h1>
-    <%= simple_form_for @list do |f| %>
-      <%= f.input :name, label: "List name" %>
-      <%= f.input :image_url, label: "Add photo URL for this list" %>
-      <%= f.button :submit, class: "btn btn-success" %>
-    <% end %>
-  </div>
+  <%= render 'lists/form' %>
 </div>

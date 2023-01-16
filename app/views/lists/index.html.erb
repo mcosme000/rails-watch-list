@@ -11,21 +11,7 @@
     <%= link_to "Create list", new_list_path, class: "button" %>
   </div>
   <div class="lists-container row">
-    <% @lists.each do |list| %>
-      <div class="col-sm-12 col-md-6 col-lg-4">
-      <% if list.image_url %>
-        <div class="list-card"
-        style="background-image:url(<%= image_url(list.image_url) %>)">
-          <p><%= link_to list.name, list_path(list) %></p>
-        </div>
-      <% else %>
-        <div class="list-card"
-        style="background-image: url('assets/thumbnail.jpg')">
-          <p><%= link_to list.name, list_path(list) %></p>
-        </div>
-      <% end %>
-      </div>
-    <% end %>
+    <%= render 'lists/list_card' %>
   </div>
 
 </div>
