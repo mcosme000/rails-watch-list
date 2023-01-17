@@ -11,4 +11,22 @@
     </div>
   <% end %>
 
+  <hr class="my-5">
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="col-12 bh-success">
+        <% if @list.reviews.any? %>
+          <%= render 'lists/reviews' %>
+        <% else %>
+          <p>There are no reviews for this list yet</p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="col-12">
+        <%= render 'lists/review_form' %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,7 @@
+<h2>Reviews</h2>
+<% @list.reviews.each do |rev| %>
+  <div class="review py-3 border-bottom">
+    <h3><%= rev.rating %> - <span class="date fs-6 text-secondary"><%= rev.created_at.strftime('%m/%d/%Y') %></span></h3>
+    <p><%= rev.content %></p>
+  </div>
+<% end %>
