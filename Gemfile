@@ -40,7 +40,6 @@ gem "jbuilder"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
-# gem 'pluralize', '~> 0.2.0'
 # gem 'ffi', '~> 1.15.5'
 
 # Use Sass to process CSS
