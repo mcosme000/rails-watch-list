@@ -2,14 +2,15 @@
   height: 250px;
   background-size: cover;
   background-position: center;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin-bottom: 20px;
-
+  border-radius: 3px;
   a {
-    font-size: 30px;
+    padding: 10px 25px;
+    font-size: 28px;
     color: #fff;
     font-weight: bold;
     text-shadow: 2px 2px 3px rgba(39, 39, 39, 0.783);

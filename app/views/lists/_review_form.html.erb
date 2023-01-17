@@ -2,6 +2,6 @@
   <%= simple_form_for [@list, @review] do |f| %>
     <%= f.input :content, placeholder: "Add your review here" %>
     <%= f.input :rating, collection: 1..5 %>
-    <%= f.button :submit, class: "btn btn-success" %>
+    <%= f.button :submit, class: "button button-green" %>
   <% end %>
 </div>

@@ -1,12 +1,13 @@
 <% @list.movies.each do |movie| %>
   <div class="col-sm-12 col-md-6">
-    <div class="col-12 bg-white rounded shadow-sm">
+    <div class="col-12 mb-4 bg-white rounded shadow-sm">
       <div class="movie-img">
         <img src="<%= movie.poster_url%>" alt="">
       </div>
       <div class="carta-content p-3">
-        <h3 class="fw-bold"><%= movie.title %> - <%= movie.rating %></h3 class="fw-bold">
+        <h4 class="fw-bold"><%= movie.title %> - <%= movie.rating %> <i class="fa-solid fa-star fs-6"></i></h4 class="fw-bold">
         <p><%= movie.overview %></p>
+        <p><i class="fa-solid fa-bookmark bookmark-icon"></i><%= movie.bookmarks.first.comment if movie.bookmarks.any?%></p>
       </div>
     </div>
   </div>

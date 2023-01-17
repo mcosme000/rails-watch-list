@@ -4,7 +4,7 @@
     <div class="banner-content text-center">
       <h1 class="mb-2"><%= @list.name %></h1>
       <% if @list.movies.any? %>
-        <p class="tag"><%= @list.movies.count %> movies</p>
+        <p class="tag"><%= pluralize(@list.movies.count, 'movie') %></p>
       <% end %>
       <%# ACTION BUTTONS %>
       <%= render 'lists/action_buttons' %>
