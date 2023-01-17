@@ -129,8 +129,9 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.0-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.0-x86_64-linux)
+      racc (~> 1.4)
     pg (1.4.5)
-    pluralize (0.2.0)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.2)
@@ -225,6 +226,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
@@ -234,7 +236,6 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
-  pluralize (~> 0.2.0)
   puma (~> 5.0)
   rails (~> 7.0.4)
   rails-controller-testing
@@ -251,4 +252,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.4.3
+   2.4.4
