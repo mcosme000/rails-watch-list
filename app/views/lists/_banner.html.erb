@@ -1,10 +1,10 @@
-<div class="banner d-flex justify-content-center align-items-center"
+<div class="banner d-flex justify-content-start align-items-center px-5"
   style="background-image: url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key)
   : 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80' %>)">
-  <div class="banner-content text-center">
+  <div class="banner-content container">
     <h1 class="mb-2"><%= @list.name %></h1>
     <% if @list.movies.any? %>
-      <p class="tag"><%= @list.movies.count %> movies</p>
+      <p class="tag"><%= pluralize(@list.movies.count, 'movie') %></p>
     <% end %>
     <%# ACTION BUTTONS %>
     <%= render 'lists/action_buttons' %>
