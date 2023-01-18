@@ -1,24 +1,10 @@
-<% if @list.image_url %>
-  <div class="banner d-flex justify-content-center align-items-center"
-      style="background-image:url(<%= image_url(@list.image_url) %>)">
-    <div class="banner-content text-center">
-      <h1 class="mb-2"><%= @list.name %></h1>
-      <% if @list.movies.any? %>
-        <p class="tag"><%= pluralize(@list.movies.count, 'movie') %></p>
-      <% end %>
-      <%# ACTION BUTTONS %>
-      <%= render 'lists/action_buttons' %>
-    </div>
+<div class="banner d-flex justify-content-center align-items-center">
+  <div class="banner-content text-center">
+    <h1 class="mb-2"><%= @list.name %></h1>
+    <% if @list.movies.any? %>
+      <p class="tag"><%= @list.movies.count %> movies</p>
+    <% end %>
+    <%# ACTION BUTTONS %>
+    <%= render 'lists/action_buttons' %>
   </div>
-<% else %>
-  <div class="banner d-flex justify-content-center align-items-center">
-    <div class="banner-content text-center">
-      <h1 class="mb-2"><%= @list.name %></h1>
-      <% if @list.movies.any? %>
-        <p class="tag"><%= @list.movies.count %> movies</p>
-      <% end %>
-      <%# ACTION BUTTONS %>
-      <%= render 'lists/action_buttons' %>
-    </div>
-  </div>
-<% end %>
+</div>
