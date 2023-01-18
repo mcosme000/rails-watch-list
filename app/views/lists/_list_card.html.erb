@@ -1,7 +1,7 @@
 <% @lists.each do |list| %>
   <div class="col-sm-12 col-md-6 col-lg-4">
     <div class="list-card shadow-sm"
-    style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
+    style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80' %>)">
       <p><%= link_to list.name, list_path(list) %></p>
     </div>
   </div>
