@@ -2,6 +2,7 @@
     <h1>Create a new list</h1>
     <%= simple_form_for @list do |f| %>
       <%= f.input :name, label: "List name" %>
+      <%= f.input :photo, as: :file %>
       <%= f.button :submit, class: "button button-green" %>
     <% end %>
   </div>
