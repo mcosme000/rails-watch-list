@@ -45,7 +45,7 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to root_path
+    redirect_to root_path, status: :see_other
   end
 
   private

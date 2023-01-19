@@ -1,13 +1,17 @@
-<% @list.movies.each do |movie| %>
+<% @list.bookmarks.each do |bookmark| %>
   <div class="col-sm-12 col-md-6">
     <div class="col-12 mb-4 bg-white rounded shadow-sm">
       <div class="movie-img">
-        <img src="<%= movie.poster_url%>" alt="">
+        <img src="<%= bookmark.movie.poster_url%>" alt="">
       </div>
       <div class="carta-content p-3">
-        <h4 class="fw-bold"><%= movie.title %> - <%= movie.rating %> <i class="fa-solid fa-star fs-6"></i></h4 class="fw-bold">
-        <p><%= movie.overview %></p>
-        <p><i class="fa-solid fa-bookmark bookmark-icon"></i><%= movie.bookmarks.first.comment if movie.bookmarks.any?%></p>
+        <h4 class="fw-bold"><%= bookmark.movie.title %> - <%= bookmark.movie.rating %> <i class="fa-solid fa-star fs-6"></i></h4 class="fw-bold">
+        <p><%= bookmark.movie.overview %></p>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <p><i class="fa-solid fa-bookmark bookmark-icon"></i><%= bookmark.comment %></p>
+          <p class="text-danger fw-bold"><%= link_to "Delete", bookmark_path(bookmark),
+          data: { turbo_method: :delete, turbo_confirm: "Continue?" } %></p>
+        </div>
       </div>
     </div>
   </div>

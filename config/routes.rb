@@ -14,4 +14,6 @@ Rails.application.routes.draw do
       get :top_rated
     end
   end
+
+  resources :bookmarks, only: %i[destroy]
 end
